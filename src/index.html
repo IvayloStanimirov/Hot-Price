@@ -8,7 +8,11 @@
       content="Used as a boilerplate for tasks in the 'HTML, CSS and SASS' course in boom.dev"
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-   
+   <style>
+     .price span {
+       display: none;
+     }
+   </style>
   </head>
   <body>
     <div class="main">
@@ -27,7 +31,7 @@
               </div>
               <div class="media-content">
                 <p class="title is-4">iO Series 9</p>
-                <p class="subtitle is-6 price">$1,00 </p>
+                <p class="subtitle is-6 price">$1,00 <span>🔥</span></p>
               </div>
             </div>
 
@@ -52,7 +56,7 @@
               </div>
               <div class="media-content">
                 <p class="title is-4">iO Series 8</p>
-                <p class="subtitle is-6 price">$1,00 </p>
+                <p class="subtitle is-6 price">$1,00 <span>🔥</span></p>
               </div>
             </div>
 
@@ -77,7 +81,7 @@
               </div>
               <div class="media-content">
                 <p class="title is-4">iO Series 7</p>
-                <p class="subtitle is-6 price hot">$0,50</p>
+                <p class="subtitle is-6 price hot">$0,50 <span>🔥</span></p>
                 
               </div>
             </div>
@@ -96,12 +100,7 @@
     let prices = document.querySelectorAll('.price');
     let fireIcon = document.createTextNode('🔥')
     let fireElement = document.createElement('span');
-    fireElement.appendChild(fireIcon);
     
-    prices.forEach((e) => {
-      if(e.classList.contains('hot')) {
-        e.appendChild(fireElement)
-      }
-    })
+    prices[2].children[0].style.display = 'inline-block'
   </script>
 </html>
